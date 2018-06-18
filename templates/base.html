@@ -1,0 +1,15 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'lib/reset.css') }}" />
+  {% block css %}
+  {% endblock %}
+  <title>Fighting ncepu admin</title>
+</head>
+<body>
+  {% block dom %}
+  {% endblock %}
+  <script type="text/javascript" src="{{ url_for('static', filename = 'lib/jquery.js') }}"></script>
+  {% block js %}
+  {% endblock %}
+</body>

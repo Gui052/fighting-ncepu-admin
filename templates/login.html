@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'login/index.css') }}" />
+{% endblock %}
+
+{% block dom %}
+  <div class="container">
+    <img class="logo" src="{{ url_for('static', filename = 'images/logo.png') }}" />
+    <div class="input-wrapper">
+      <input type="text" placeholder="请输入您的用户名" class="username" />
+      <p class="error-msg"></p>
+    </div>
+    <div class="input-wrapper">
+      <input type="password" placeholder="请输入您的密码" class="password" />
+      <p class="error-msg"></p>
+    </div>
+    <button class="submit-btn">登 录</button>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="{{ url_for('static', filename = 'login/index.js') }}"></script>
+{% endblock %}

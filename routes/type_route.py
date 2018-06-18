@@ -8,7 +8,7 @@ from type_model import *
 
 get_type = Blueprint('get_type', __name__)
 @get_type.route('/index')
-def test():
+def index():
     return jsonify({
         'code': 200,
         'data': get_all_type()
