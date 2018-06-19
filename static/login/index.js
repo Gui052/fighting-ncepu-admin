@@ -39,7 +39,11 @@ $(function() {
 
     if (data != null) {
       $.post('/auth/login', data, (res) => {
-        console.log(res);
+        if (res.code === 200) {
+
+        } else {
+          alert(res.msg)
+        }
       });
     }
   });
