@@ -32,10 +32,11 @@ def login():
     if not(check_password_hash(row.passwd, data['password'])):
         return param_error('密码错误')
     session['has_login'] = True
+    session.permanet = True
     return jsonify({ 'code': 200 })
 
 @auth_url.route('/logout')
 def logout():
-    if 'username' in session:
-        session.pop('username', None)
-    return redirect(url_for('login_view.login'))
+    if 'has_login' in session:
+        session.pop('has_login', None)
+    return redirect(url_for('view.login'))

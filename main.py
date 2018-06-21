@@ -1,3 +1,4 @@
+from datetime import timedelta
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
@@ -8,6 +9,7 @@ app.config['SECRET_KEY'] = 'lsgogroup'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost:3306/ncepu'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['JSON_AS_ASCII'] = False
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(weeks=2)
 
 from routes import init_routes
 init_routes(app)
