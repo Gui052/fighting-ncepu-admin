@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, session, redirect, url_for
+from flask import Blueprint, render_template, session, \
+    redirect, url_for, request
 from utils import page_check_login
 
 view = Blueprint('view', __name__)

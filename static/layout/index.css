@@ -1,0 +1,46 @@
+body {
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 20px 0px 10px;
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  width: 180px;
+  margin-top: 5px;
+}
+.layout {
+  display: inline-block;
+  color: #aaa;
+  line-height: 60px;
+  float: right;
+}
+.layout:hover {
+  text-decoration: underline;
+}
+.menu {
+  float: left;
+  width: 200px;
+  border-right: 1px solid #ddd;
+}
+.menu-list li {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  color: #aaa;
+}
+.menu-title {
+  color: #40a9ff;
+}
+.menu-title:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename = 'layout/index.css') }}" />
+{% endblock %}
+
+{% block dom %}
+  <div class="wrapper">
+    <header class="header">
+      <img src="{{ url_for('static', filename = 'images/logo.png') }}" class="logo" />
+      <a href="/auth/logout" class="layout">退出登录</a>
+    </header>
+    <div class="container">
+      <div class="menu">
+        <ul class="menu-list">
+          <li>
+            <a class="menu-title">题目类型管理</a>
+          </li>
+          <li>题目管理</li>
+          <li>用户管理</li>
+          <li>段位管理</li>
+        </ul>
+      </div>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}

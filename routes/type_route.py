@@ -6,8 +6,8 @@ sys.path.append(os.getcwd() + '/models')
 
 from type_model import *
 
-get_type = Blueprint('get_type', __name__)
-@get_type.route('/index')
+type_url = Blueprint('type_url', __name__)
+@type_url.route('/get')
 def index():
     return jsonify({
         'code': 200,

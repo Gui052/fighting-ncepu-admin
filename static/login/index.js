@@ -40,7 +40,8 @@ $(function() {
     if (data != null) {
       $.post('/auth/login', data, (res) => {
         if (res.code === 200) {
-
+          const str = location.search;
+          location.href = unescape(str.substr(str.indexOf('=') + 1)) || '/index';
         } else {
           alert(res.msg)
         }
@@ -53,4 +54,5 @@ $(function() {
       reset(item);
     });
   });
+
 });
