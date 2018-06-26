@@ -44,3 +44,33 @@ a {
 .menu-title:hover {
   text-decoration: underline;
 }
+.content-wrapper {
+  padding-left: 251px;
+  padding: 50px 50px 50px 251px;
+  box-sizing: border-box;
+}
+.table {
+  width: 100%;
+  text-align: left;
+}
+.table-thead {
+  line-height: 1.5;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+}
+.table-thead th {
+  padding: 16px;
+}
+.tbody-tr {
+  border-bottom: 1px solid #ddd;
+  transition: all 0.3s;
+  color: rgba(0,0,0,.65);
+  line-height: 1.5;
+}
+.tbody-tr:hover {
+  background: #e6f7ff;
+}
+.tbody-tr td {
+  padding: 16px;
+}
