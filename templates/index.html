@@ -15,11 +15,15 @@
           <td>{{type.id}}</td>
           <td>{{type.name}}</td>
           <td>
-            <a>删除</a>
+            <a data-index={{type.id}} class="delete">删除</a>
             <a>编辑</a>
           </td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="{{ url_for('static', filename = 'type/index.js') }}"></script>
 {% endblock %}
