@@ -9,9 +9,13 @@ class Type(db.Model):
         autoincrement = True
     )
     sort = db.Column(db.String(16))
+    status = db.Column(
+        db.Integer,
+        default = 1
+    )
 
 def get_all_type():
-    types = Type.query.with_entities(Type.id, Type.sort).all()
+    types = Type.query.filter_by(status = 1).with_entities(Type.id, Type.sort).all()
     data = list()
     for t in types:
         data.append({
@@ -19,3 +23,17 @@ def get_all_type():
             'name': t[1]
         })
     return data
+
+def get_type(id):
+    type = Type.query.filter_by(id = id).first()
+    return type
+
+def del_type(id):
+    type = get_type(id)
+    type.status = 0
+    db.session.commit()
+
+def update_type(id, name):
+    type = get_type(id)
+    type.sort = name
+    db.session.commit()

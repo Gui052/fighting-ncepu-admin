@@ -28,3 +28,9 @@
     </div>
   </div>
 {% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="{{ url_for('static', filename = 'layout/index.js') }}"></script>
+  {% block module %}
+  {% endblock %}
+{% endblock %}

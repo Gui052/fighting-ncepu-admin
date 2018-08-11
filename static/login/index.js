@@ -38,12 +38,15 @@ $(function() {
     const data = getData(checkList);
 
     if (data != null) {
-      $.post('/auth/login', data, (res) => {
-        if (res.code === 200) {
+      post({
+        path: 'auth/login',
+        data,
+        success() {
           const str = location.search;
-          location.href = unescape(str.substr(str.indexOf('=') + 1)) || '/index';
-        } else {
-          alert(res.msg)
+          location.href = unescape(str.substr(str.indexOf('=') + 1)) || './index';
+        },
+        fail({ msg }) {
+          alert(msg);
         }
       });
     }

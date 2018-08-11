@@ -11,12 +11,12 @@
     </thead>
     <tbody class="table-tbody">
       {% for type in types %}
-        <tr class="tbody-tr">
+        <tr class="tbody-tr" data-id={{type.id}}>
           <td>{{type.id}}</td>
-          <td>{{type.name}}</td>
+          <td class="name">{{type.name}}</td>
           <td>
             <a data-index={{type.id}} class="delete">删除</a>
-            <a>编辑</a>
+            <a data-index={{type.id}} class="edit">编辑</a>
           </td>
         </tr>
       {% endfor %}
@@ -24,6 +24,6 @@
   </table>
 {% endblock %}
 
-{% block js %}
+{% block module %}
   <script type="text/javascript" src="{{ url_for('static', filename = 'type/index.js') }}"></script>
 {% endblock %}

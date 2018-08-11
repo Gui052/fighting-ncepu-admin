@@ -5,6 +5,7 @@ from werkzeug.security import check_password_hash
 
 import sys
 import os
+from utils import *
 sys.path.append(os.getcwd() + '/models')
 
 from user_model import *
@@ -13,9 +14,6 @@ msgs = {
     'username': '请输入用户名',
     'password': '请输入密码'
 }
-
-def param_error(msg):
-    return jsonify({ 'code': 400, 'msg': msg })
 
 auth_url = Blueprint('auth_url', __name__)
 @auth_url.route('/login', methods=['POST'])
