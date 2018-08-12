@@ -5,7 +5,6 @@ from functools import wraps
 def page_check_login(func):
     @wraps(func)
     def call(*args, **kwargs):
-        print 'zp'
         if 'has_login' not in session:
             return redirect(
                 url_for('view.login', prev_url = request.path)

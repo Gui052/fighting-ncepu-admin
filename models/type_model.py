@@ -37,3 +37,18 @@ def update_type(id, name):
     type = get_type(id)
     type.sort = name
     db.session.commit()
+
+def add_type(name):
+    old = Type.query.filter_by(sort = name).first()
+
+    if old != None:
+        if old.status == 0:
+            old.status = 1
+        else:
+            return None
+    else:
+        type = Type(sort = name)
+        db.session.add(type)
+
+    db.session.commit()
+    return db.session.query(Type).filter_by(sort = name).first()

@@ -30,3 +30,17 @@ def update():
         return param_error('类型名称不能为空')
     update_type(id, name)
     return success('msg', '更新成功')
+
+@type_url.route('/add', methods=['POST'])
+@page_check_login
+def add():
+    name = request.values.get('name')
+    if name == '':
+        return param_error('类型名称不能为空')
+    res = add_type(name)
+    if res == None:
+        return param_error('该类型已存在')
+    return success('data', {
+        'id': res.id,
+        'msg': '新增成功'
+    })

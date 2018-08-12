@@ -22,15 +22,13 @@
         </ul>
       </div>
       <div class="content-wrapper">
+        <header class="content-header">
+          {% block header %}
+          {% endblock %}
+        </header>
         {% block content %}
         {% endblock %}
       </div>
     </div>
   </div>
-{% endblock %}
-
-{% block js %}
-  <script type="text/javascript" src="{{ url_for('static', filename = 'layout/index.js') }}"></script>
-  {% block module %}
-  {% endblock %}
 {% endblock %}

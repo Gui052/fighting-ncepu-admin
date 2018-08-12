@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <button class="add-type">新增</button>
+{% endblock %}
+
 {% block content %}
   <table class="table">
     <thead class="table-thead">
@@ -24,6 +28,6 @@
   </table>
 {% endblock %}
 
-{% block module %}
+{% block js %}
   <script type="text/javascript" src="{{ url_for('static', filename = 'type/index.js') }}"></script>
 {% endblock %}
